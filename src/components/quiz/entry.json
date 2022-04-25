@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_quiz_entries",
+  "info": {
+    "displayName": "Entry",
+    "icon": "question",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Question": {
+      "type": "string",
+      "required": true
+    },
+    "Picture": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "audios",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Content": {
+      "type": "json",
+      "required": true
+    }
+  }
+}
