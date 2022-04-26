@@ -12,13 +12,30 @@
   "pluginOptions": {},
   "attributes": {
     "Slug": {
-      "type": "string",
-      "required": true,
-      "unique": true
+      "type": "uid",
+      "required": true
     },
     "Title": {
       "type": "string",
       "required": true
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "Intro": {
+      "type": "text",
+      "required": true
+    },
+    "Data": {
+      "type": "json"
     },
     "Entry": {
       "type": "component",
@@ -26,7 +43,7 @@
       "component": "quiz.entry",
       "required": true
     },
-    "Answer": {
+    "Conclusion": {
       "type": "json"
     }
   }
