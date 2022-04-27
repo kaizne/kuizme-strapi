@@ -16,20 +16,24 @@
       "type": "uid",
       "required": true
     },
+    "Type": {
+      "type": "integer",
+      "required": true
+    },
     "Title": {
       "type": "string",
       "required": true
     },
-    "Image": {
-      "type": "media",
-      "multiple": true,
-      "required": true,
+    "Featured": {
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     },
     "Intro": {
       "type": "text",
@@ -38,11 +42,20 @@
     "Data": {
       "type": "json"
     },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
     "Entry": {
       "type": "component",
       "repeatable": true,
-      "component": "quiz.entry",
-      "required": false
+      "component": "quiz.entry"
     },
     "Conclusion": {
       "type": "json"
