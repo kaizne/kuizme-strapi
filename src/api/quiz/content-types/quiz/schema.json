@@ -12,52 +12,53 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Slug": {
+    "slug": {
       "type": "uid",
       "required": true
     },
-    "Type": {
+    "type": {
       "type": "integer",
       "required": true
     },
-    "Title": {
+    "title": {
       "type": "string",
       "required": true
     },
-    "Featured": {
+    "featured": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
-    "Intro": {
+    "intro": {
       "type": "text",
       "required": true
     },
-    "Data": {
+    "info": {
       "type": "json"
     },
-    "Image": {
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
-    "Entry": {
+    "entry": {
       "type": "component",
       "repeatable": true,
       "component": "quiz.entry"
     },
-    "Conclusion": {
+    "conclusion": {
       "type": "json"
     }
   }

@@ -7,21 +7,22 @@
   },
   "options": {},
   "attributes": {
-    "Question": {
+    "question": {
       "type": "string",
       "required": true
     },
-    "Picture": {
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "audios",
         "videos"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
-    "Content": {
+    "content": {
       "type": "json",
       "required": true
     }
