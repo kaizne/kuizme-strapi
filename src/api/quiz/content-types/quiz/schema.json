@@ -4,7 +4,8 @@
   "info": {
     "singularName": "quiz",
     "pluralName": "quizzes",
-    "displayName": "Quiz"
+    "displayName": "Quiz",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,15 +21,15 @@
       "required": true
     },
     "Image": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true,
-      "required": true
+      ]
     },
     "Intro": {
       "type": "text",
@@ -41,7 +42,7 @@
       "type": "component",
       "repeatable": true,
       "component": "quiz.entry",
-      "required": true
+      "required": false
     },
     "Conclusion": {
       "type": "json"
