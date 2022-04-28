@@ -60,6 +60,10 @@
     },
     "conclusion": {
       "type": "json"
+    },
+    "category": {
+      "type": "string",
+      "required": true
     }
   }
 }
