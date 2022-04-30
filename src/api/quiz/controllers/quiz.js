@@ -13,8 +13,9 @@ module.exports = createCoreController('api::quiz.quiz', ({ strapi }) =>  ({
     if (!query.filters) query.filters = {}
     query.filters.slug = { '$eq': slug }
 
-    // const entity = await strapi.service('api::quiz.quiz').find(query)
+    const entity = await strapi.service('api::quiz.quiz').find(query)
 
+    /*
     const entity = await strapi.service('api::quiz.quiz').find(query, {
         populate: {
             entry: {
@@ -24,6 +25,7 @@ module.exports = createCoreController('api::quiz.quiz', ({ strapi }) =>  ({
             }
         }
     })
+    */
 
     const { results } = await this.sanitizeOutput(entity, ctx)
     return this.transformResponse(results[0])
