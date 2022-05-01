@@ -25,6 +25,9 @@
     "content": {
       "type": "json",
       "required": true
+    },
+    "mediaUrl": {
+      "type": "json"
     }
   }
 }
