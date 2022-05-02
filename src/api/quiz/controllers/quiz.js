@@ -28,5 +28,24 @@ module.exports = createCoreController('api::quiz.quiz', ({ strapi }) =>  ({
 
     const { results } = await this.sanitizeOutput(entity, ctx)
     return this.transformResponse(results[0])
-  }
+  },
+
+  async logView(ctx) {
+    const { slug } = ctx.params
+    try {
+        const quiz = await strapi.services.quiz.findOne({ slug })
+        await strapi.services.quiz.update(
+            { id: quiz.id },
+            { views: parseInt(quiz.views) + 1 }
+        )
+        return ctx.send({
+            success: true,
+        })
+        } catch (error) {
+            console.error(error)
+        return ctx.send({
+            success: false,
+        })
+        }
+    }
 }))
