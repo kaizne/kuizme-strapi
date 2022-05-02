@@ -26,7 +26,7 @@ const customRouter = (innerRouter, extraRoutes=[]) => {
 const myExtraRoutes = [
     {
         'method': 'PATCH',
-        'path': '/quiz/:slug/view',
+        'path': '/quizzes/:slug/view',
         'handler': 'quiz.logView'
     }
 ]
