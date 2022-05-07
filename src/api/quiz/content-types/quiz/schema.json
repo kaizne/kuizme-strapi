@@ -67,10 +67,6 @@
     },
     "subcategory": {
       "type": "string"
-    },
-    "viewCount": {
-      "type": "integer",
-      "default": 0
     }
   }
 }
