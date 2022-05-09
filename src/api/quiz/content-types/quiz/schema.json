@@ -67,6 +67,13 @@
     },
     "subcategory": {
       "type": "string"
+    },
+    "meta": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
     }
   }
 }
