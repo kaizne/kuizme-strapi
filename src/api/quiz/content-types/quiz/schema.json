@@ -67,6 +67,12 @@
     },
     "subcategory": {
       "type": "string"
+    },
+    "plays": {
+      "type": "integer",
+      "default": 0,
+      "required": true,
+      "min": 0
     }
   }
 }
