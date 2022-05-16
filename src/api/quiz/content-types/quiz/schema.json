@@ -73,6 +73,9 @@
       "default": 0,
       "required": true,
       "min": 0
+    },
+    "limit": {
+      "type": "integer"
     }
   }
 }
