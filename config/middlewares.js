@@ -24,7 +24,7 @@ module.exports = [
         config: {
             enabled: true,
             headers: '*',
-            origin: ['http://localhost:1337', 'https://kuizme.com']
+            origin: ['http://localhost:1337', 'https://kuizme-strapi-ao8qx.ondigitalocean.app']
         }
     },
     "strapi::poweredBy",
