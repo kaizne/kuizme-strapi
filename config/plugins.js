@@ -1,4 +1,4 @@
-module.exports = ({env}) => ({
+module.exports = ({ env }) => ({
     upload: {
         config: {
             provider: 'strapi-provider-upload-do',
@@ -11,5 +11,18 @@ module.exports = ({env}) => ({
                 // cdn: env('DO_SPACE_CDN')
             }
         }
-    }
+    },
+    email: {
+        config: {
+          provider: 'mailgun',
+          providerOptions: {
+            apiKey: env('MAILGUN_API_KEY'),
+            domain: env('MAILGUN_DOMAIN'),
+          },
+          settings: {
+            defaultFrom: 'support@kuizme.com',
+            defaultReplyTo: 'support@kuizme.com',
+          },
+        },
+      },
 })
