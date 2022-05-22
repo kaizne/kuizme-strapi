@@ -76,6 +76,11 @@
     },
     "limit": {
       "type": "integer"
+    },
+    "likes": {
+      "type": "integer",
+      "default": 0,
+      "required": true
     }
   }
 }
