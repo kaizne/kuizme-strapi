@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 /**
  * quiz router.
@@ -14,8 +14,7 @@ const customRouter = (innerRouter, extraRoutes = []) => {
             return innerRouter.prefix
         },
         get routes() {
-            if (!routes) routes = innerRouter.routes.concat(extraRoutes)
-            return routes
+            if (!routes) routes = extraRoutes.concat(innerRouter.routes)
         }
     }
 }
