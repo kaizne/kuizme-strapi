@@ -30,6 +30,11 @@ const myExtraRoutes = [
         method: 'PATCH',
         path: '/quizzes/:slug/like',
         handler: 'api::quiz.quiz.incrementLike',
+    },
+    {
+        method: 'PATCH',
+        path: '/quizzes/:slug/dislike',
+        handler: 'api::quiz.quiz.decrementLike',
     }
 ]
 
