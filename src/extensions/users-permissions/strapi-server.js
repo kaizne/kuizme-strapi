@@ -5,9 +5,11 @@ module.exports = (plugin) => {
         if (!user) return ctx.unauthorized()
 
         let library = user.library
+        if (library === null) library = []
+        
         const url = ctx.request.body.url
 
-        if (library.includes(url)) library = library.filter(elem => elem !== url)
+        if (library && library.includes(url)) library = library.filter(elem => elem !== url)
         else library.push(url)
         
         await strapi.query('plugin::users-permissions.user').update({
