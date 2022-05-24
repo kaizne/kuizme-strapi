@@ -4,6 +4,10 @@ module.exports = (plugin) => {
         const user = ctx.state.user
         if (!user) return ctx.unauthorized()
 
+        console.log('ctx: ' + ctx)
+        console.log('User: ' + user)
+
+        /*
         let library = user.library
         const url = ctx.request.body.url
 
@@ -16,6 +20,7 @@ module.exports = (plugin) => {
         }).then((res) => {
           ctx.response.status = 200;
         })
+        */
       }
 
     plugin.routes['content-api'].routes.push({
