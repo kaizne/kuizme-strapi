@@ -82,6 +82,9 @@
       "default": 0,
       "required": true,
       "min": 0
+    },
+    "section": {
+      "type": "string"
     }
   }
 }
