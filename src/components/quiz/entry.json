@@ -9,7 +9,7 @@
   "attributes": {
     "question": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "media": {
       "type": "media",
