@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_quiz_sections",
+  "info": {
+    "displayName": "Section",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "difficulty": {
+      "type": "string"
+    },
+    "entry": {
+      "type": "component",
+      "repeatable": true,
+      "component": "quiz.entry"
+    }
+  }
+}

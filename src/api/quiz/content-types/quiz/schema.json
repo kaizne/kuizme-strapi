@@ -83,8 +83,16 @@
       "required": true,
       "min": 0
     },
+    "introText": {
+      "type": "json"
+    },
+    "label": {
+      "type": "json"
+    },
     "section": {
-      "type": "string"
+      "type": "component",
+      "repeatable": true,
+      "component": "quiz.section"
     }
   }
 }
