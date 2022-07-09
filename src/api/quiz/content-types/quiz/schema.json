@@ -86,13 +86,13 @@
     "introText": {
       "type": "json"
     },
-    "label": {
-      "type": "json"
-    },
     "section": {
       "type": "component",
       "repeatable": true,
       "component": "quiz.section"
+    },
+    "label": {
+      "type": "string"
     }
   }
 }
