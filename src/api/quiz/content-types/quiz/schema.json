@@ -93,6 +93,9 @@
     },
     "label": {
       "type": "string"
+    },
+    "group": {
+      "type": "string"
     }
   }
 }
