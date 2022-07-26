@@ -96,6 +96,9 @@
     },
     "group": {
       "type": "string"
+    },
+    "conclusionStats": {
+      "type": "json"
     }
   }
 }

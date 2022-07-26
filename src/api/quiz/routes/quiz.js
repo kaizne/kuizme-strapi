@@ -36,6 +36,11 @@ const myExtraRoutes = [
         path: '/quizzes/:slug/dislike',
         handler: 'api::quiz.quiz.decrementLike',
     },
+    {
+        method: 'PATCH',
+        path: '/quizzes/:slug/conclusion',
+        handler: 'api::quiz.quiz.updateConclusionStats',
+    },
 ]
 
 module.exports = customRouter(defaultRouter, myExtraRoutes)
