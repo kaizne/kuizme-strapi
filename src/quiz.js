@@ -71,23 +71,15 @@ module.exports = createCoreController('api::quiz.quiz', ({ strapi }) =>  ({
     const entity = await strapi.service('api::quiz.quiz').find(query)
     const { results } = await this.sanitizeOutput(entity, ctx)
     const response = this.transformResponse(results[0])
-    let newStats = null
-    if (!response.data.attributes.conclusionStats) {
-        if (response.data.attributes.type === 1) {
-            newStats = {}
-            const len = Object.keys(response.data.attributes.info).length
-            for (let i = 1; i <= len; ++i)
-                newStats[i] = 0
-            newStats[key]++
-        }
-    } else {
-        newStats = response.data.attributes.conclusionStats
-        newStats[key]++
-    }
+    console.log(`Resonse: ${JSON.stringify(response)}`)
+    /*
+    let newStats = response.data.attributes.conclusionStats
+    newStats[key]++
     return await strapi.query('api::quiz.quiz')
         .update({
             where: {slug: response.data.attributes.slug},
             data: {conclusionStats: newStats}
         })
+    */
   }
 }))
