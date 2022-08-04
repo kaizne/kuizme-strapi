@@ -75,10 +75,11 @@ module.exports = createCoreController('api::quiz.quiz', ({ strapi }) =>  ({
     if (!response.data.attributes.conclusionStats) {
         if (response.data.attributes.type === 1) {
             newStats = {}
+            newStats['default'] = []
             const len = Object.keys(response.data.attributes.info).length
             for (let i = 1; i <= len; ++i)
-                newStats[i] = 0
-            newStats[key]++
+                newStats['default'][i] = 0
+            newStats['default'][key]++
         }
     } else {
         newStats = response.data.attributes.conclusionStats
