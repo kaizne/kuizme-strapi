@@ -133,16 +133,10 @@ module.exports = createCoreController('api::quiz.quiz', ({ strapi }) =>  ({
     })
     const response = entity[0]
     let newComments = null
-    if (!response.comments) {
-        newComments = {}
-    } else {
-        newComments = response.comments
-    }
-
+    if (!response.comments) newComments = {}
+    else newComments = response.comments
     if (!(commentId in newComments)) newComments[commentId] = []
-
     if (!newComments[commentId].includes(user.id)) newComments[commentId].push(user.id)
-
     newComments[commentId].sort()
 
     return await strapi.query('api::quiz.quiz')
