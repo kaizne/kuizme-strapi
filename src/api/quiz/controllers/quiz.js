@@ -118,5 +118,37 @@ module.exports = createCoreController('api::quiz.quiz', ({ strapi }) =>  ({
             where: { slug: response.slug },
             data: { conclusionStats: newStats }
         })
+  },
+
+  async upvote(ctx) {
+    const { slug } = ctx.params
+    const { query } = ctx
+    const user = ctx.state.user
+    const commentId = query.commentId
+    if (!query.filters) query.filters = {}
+    query.filters.slug = { '$eq': slug }
+    const entity = await strapi.entityService.findMany('api::quiz.quiz', {
+        fields: ['slug', 'comments'], 
+        filters: { slug: slug }
+    })
+    const response = entity[0]
+    let newComments = null
+    if (!response.comments) {
+        newComments = {}
+    } else {
+        newComments = response.comments
+    }
+
+    if (!(commentId in newComments)) newComments[commentId] = []
+
+    if (!newComments[commentId].includes(user.id)) newComments[commentId].push(user.id)
+
+    newComments[commentId].sort()
+
+    return await strapi.query('api::quiz.quiz')
+        .update({
+            where: { slug: response.slug },
+            data: { comments: newComments }
+        })
   }
 }))

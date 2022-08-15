@@ -99,6 +99,9 @@
     },
     "conclusionStats": {
       "type": "json"
+    },
+    "comments": {
+      "type": "json"
     }
   }
 }

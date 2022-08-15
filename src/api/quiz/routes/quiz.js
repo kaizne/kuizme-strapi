@@ -41,6 +41,11 @@ const myExtraRoutes = [
         path: '/quizzes/:slug/conclusion',
         handler: 'api::quiz.quiz.updateConclusionStats',
     },
+    {
+        method: 'PATCH',
+        path: '/quizzes/:slug/upvote',
+        handler: 'api::quiz.quiz.upvote',
+    },
 ]
 
 module.exports = customRouter(defaultRouter, myExtraRoutes)
