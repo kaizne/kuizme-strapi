@@ -137,6 +137,7 @@ module.exports = createCoreController('api::quiz.quiz', ({ strapi }) =>  ({
     else newComments = response.comments
     if (!(commentId in newComments)) newComments[commentId] = []
     if (!newComments[commentId].includes(user.id)) newComments[commentId].push(user.id)
+    else newComments[commentId] = newComments[commentId].filter(item => item !== user.id)
     newComments[commentId].sort()
 
     return await strapi.query('api::quiz.quiz')
