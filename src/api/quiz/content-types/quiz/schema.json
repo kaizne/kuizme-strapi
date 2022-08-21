@@ -102,6 +102,9 @@
     },
     "comments": {
       "type": "json"
+    },
+    "meta": {
+      "type": "json"
     }
   }
 }
